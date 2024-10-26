@@ -1,4 +1,27 @@
 describe("API Integration Tests with fetch", () => {
+  let originalError: any;
+
+  beforeAll(() => {
+    // Store the original console.error
+    originalError = console.error;
+
+    // Mock console.error to suppress specific warnings
+    console.error = (...args) => {
+      if (
+        typeof args[0] === 'string' &&
+        args[0].includes("prop on a DOM element")
+      ) {
+        return; // Ignore this specific warning
+      }
+      originalError(...args); // Call the original console.error for other warnings
+    };
+  });
+
+  afterAll(() => {
+    // Restore the original console.error after tests
+    console.error = originalError;
+  });
+  
   const gamesUrl = "http://stage.whgstage.com/front-end-test/games.php";
   const jackpotsUrl = "http://stage.whgstage.com/front-end-test/jackpots.php";
 

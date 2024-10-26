@@ -12,6 +12,29 @@ jest.mock("../core/hooks/useFetchGames");
 jest.mock("../core/hooks/useFetchJackpot");
 
 describe("GamePage", () => {
+  let originalError: any;
+
+  beforeAll(() => {
+    // Store the original console.error
+    originalError = console.error;
+
+    // Mock console.error to suppress specific warnings
+    console.error = (...args) => {
+      if (
+        typeof args[0] === 'string' &&
+        args[0].includes("prop on a DOM element")
+      ) {
+        return; // Ignore this specific warning
+      }
+      originalError(...args); // Call the original console.error for other warnings
+    };
+  });
+
+  afterAll(() => {
+    // Restore the original console.error after tests
+    console.error = originalError;
+  });
+  
   beforeEach(() => {
     // Reset mocks before each test
     jest.clearAllMocks();
