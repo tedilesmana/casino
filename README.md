@@ -44,3 +44,18 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+Point Description: 
+- Feed tambahan untuk permainan jackpot
+- Buat Pita untuk New dan Top
+- Palet warna #8DC63F = hijau, #373737 = black gray, #FFFFFF = white, #FCFCFC = light gray
+
+
+1. Tata letak permainan sesuai desain, dengan responsivitas diingat. => done
+2. Izinkan pengguna untuk menavigasi antar kategori, dengan state “aktif” untuk kategori yang dipilih. (terlihat pada desain) => Done
+3. Tampilkan jackpot saat ini untuk permainan yang sesuai saat halaman dirender. => Done
+4. Perbarui jackpot saat ini untuk permainan yang sesuai setiap beberapa detik. => Done
+5. Permainan "New" dan "Top" memiliki pita relevan yang menunjukkan kategorinya saat berada dalam konteks kategori yang bukan “top” atau “new”. (misalnya, saat permainan “top” juga ada di kategori “slots”)
+6. Hanya untuk web: Saat mengarahkan kursor ke permainan, muncul tombol "play" dan nama permainan. (klik tidak melakukan apa-apa)
+7. Kelompokkan kategori "ball", "virtual", dan "fun" dalam kategori “Other”.
+8. Tulis unit test menggunakan Jest.
