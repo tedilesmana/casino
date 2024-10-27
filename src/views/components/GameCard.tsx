@@ -22,6 +22,11 @@ const GameCard: React.FC<GameCardProps> = React.memo(
     const isNew = categories.includes("new");
     const isTop = categories.includes("top");
 
+    const formattedJackpotAmount = new Intl.NumberFormat("en-US", {
+      minimumFractionDigits: 2, // Untuk memastikan dua digit desimal
+      maximumFractionDigits: 2, // Maksimal dua digit desimal
+    }).format(jackpotAmount ?? 0);
+
     return (
       <motion.div
         whileHover={{ scale: 1.05 }}
@@ -47,7 +52,9 @@ const GameCard: React.FC<GameCardProps> = React.memo(
           </Overlay>
           {jackpotAmount && (
             <JackpotOverlay>
-              <p className="jackpot-amount">Jackpot: {jackpotAmount}</p>
+              <p className="jackpot-amount">
+                Jackpot: {formattedJackpotAmount}
+              </p>
             </JackpotOverlay>
           )}
         </Card>
