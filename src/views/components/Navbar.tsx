@@ -18,12 +18,12 @@ const NavLink = styled(Link)<{ isActive: boolean }>`
   color: ${({ theme }) => theme.colors.white};
   text-decoration: none;
   flex: 1;
-  font-size: 1.4rem;
+  font-size: 20px;
   transition: color 0.3s, background-color 0.3s;
   font-weight: ${({ isActive }) => (isActive ? "bold" : "normal")};
   background-color: ${({ isActive, theme }) =>
     isActive ? theme.colors.primary : "transparent"};
-  padding: 1.5rem 0;
+  padding: 20px 0;
   text-align: center;
 
   &:hover {
@@ -39,7 +39,7 @@ const BurgerMenu = styled.div`
   display: none;
   flex-direction: column;
   cursor: pointer;
-  padding: 1.5rem 1rem;
+  padding: 20px 15px;
 
   div {
     width: 25px;

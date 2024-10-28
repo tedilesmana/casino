@@ -62,11 +62,11 @@ const GamePage: React.FC = () => {
       <Navbar onCategorySelect={handleCategorySelect} />
       {/* Pass the handler to Navbar */}
       <ContentWrapper
-        desktopPaddingVertical="50px"
+        desktopPaddingVertical="70px"
         desktopPaddingHorizontal="50px"
-        tabletPaddingVertical="45px"
+        tabletPaddingVertical="70px"
         tabletPaddingHorizontal="15px"
-        mobilePaddingVertical="45px"
+        mobilePaddingVertical="70px"
         mobilePaddingHorizontal="10px"
       >
         {loading || jackpotLoading ? ( // Show loader if either game or jackpot is loading
