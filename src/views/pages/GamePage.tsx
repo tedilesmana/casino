@@ -16,7 +16,7 @@ const GamePage: React.FC = () => {
     loading: jackpotLoading,
     error: jackpotError,
   } = useFetchJackpot(10000); // Set interval to 10 seconds
-  const [selectedCategory, setSelectedCategory] = useState<string | null>('new'); // State for selected category
+  const [selectedCategory, setSelectedCategory] = useState<string | null>('top'); // State for selected category
 
   // Function to handle category selection
   const handleCategorySelect = (category: string) => {
