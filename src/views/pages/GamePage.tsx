@@ -16,7 +16,9 @@ const GamePage: React.FC = () => {
     loading: jackpotLoading,
     error: jackpotError,
   } = useFetchJackpot(10000); // Set interval to 10 seconds
-  const [selectedCategory, setSelectedCategory] = useState<string | null>('top'); // State for selected category
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(
+    "top"
+  ); // State for selected category
 
   // Function to handle category selection
   const handleCategorySelect = (category: string) => {
@@ -60,12 +62,12 @@ const GamePage: React.FC = () => {
       <Navbar onCategorySelect={handleCategorySelect} />
       {/* Pass the handler to Navbar */}
       <ContentWrapper
-        desktopPaddingVertical="120px"
-        desktopPaddingHorizontal="200px"
-        tabletPaddingVertical="80px"
+        desktopPaddingVertical="50px"
+        desktopPaddingHorizontal="50px"
+        tabletPaddingVertical="45px"
         tabletPaddingHorizontal="15px"
-        mobilePaddingVertical="80px"
-        mobilePaddingHorizontal="0px"
+        mobilePaddingVertical="45px"
+        mobilePaddingHorizontal="10px"
       >
         {loading || jackpotLoading ? ( // Show loader if either game or jackpot is loading
           <Loader />
@@ -80,7 +82,7 @@ const GamePage: React.FC = () => {
             tabletColumns={3}
             mobileColumns={1}
             horizontalGap="20px"
-            verticalGap="50px"
+            verticalGap="40px"
           >
             {filteredGames.map((game: any) => (
               <GameCard

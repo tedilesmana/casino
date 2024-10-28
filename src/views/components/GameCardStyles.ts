@@ -34,6 +34,7 @@ export const Overlay = styled.div`
   justify-content: center;
   opacity: 0; /* Initially hidden */
   transition: opacity 0.2s;
+  z-index: 21;
 
   ${Card}:hover & {
     opacity: 1; /* Show overlay on hover */

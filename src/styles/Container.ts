@@ -26,14 +26,10 @@ export const ContentWrapper = styled.div<ContainerProps>`
 
   @media (max-width: 768px) {
     /* Tablet */
-    margin: ${(props) =>
-        props.tabletMarginVertical || props.desktopMarginVertical || "0"}
-      ${(props) =>
-        props.tabletMarginHorizontal || props.desktopMarginHorizontal || "0"};
-    padding: ${(props) =>
-        props.tabletPaddingVertical || props.desktopPaddingVertical || "0"}
-      ${(props) =>
-        props.tabletPaddingHorizontal || props.desktopPaddingHorizontal || "0"};
+    margin: ${(props) => props.tabletMarginVertical || "0"}
+      ${(props) => props.tabletMarginHorizontal || "0"};
+    padding: ${(props) => props.tabletPaddingVertical || "0"}
+      ${(props) => props.tabletPaddingHorizontal || "0"};
   }
 
   @media (max-width: 480px) {
