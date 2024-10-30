@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
+import { GameContext } from "../../redux/context/GameContext";
 
 const NavbarContainer = styled.nav`
   display: flex;
@@ -89,163 +90,160 @@ const DesktopMenu = styled.div`
   }
 `;
 
-const Navbar: React.FC<{ onCategorySelect: (category: string) => void }> = ({
-  onCategorySelect,
-}) => {
-  const [activeLink, setActiveLink] = useState<string>("#top");
-  const [isOpen, setIsOpen] = useState<boolean>(false); // State to manage burger menu
+const Navbar: React.FC<{}> = () => {
+  const { activeLink, setActiveLink, isOpen, setIsOpen } =
+    useContext(GameContext);
 
   const handleLinkClick = (link: string) => {
     setActiveLink(link);
-    setIsOpen(false); // Close the menu after selecting a link
-    onCategorySelect(link.replace("#", "")); // Call the handler to set the selected category
+    setIsOpen(false);
   };
 
   return (
     <NavbarContainer>
       <BurgerMenu onClick={() => setIsOpen(!isOpen)}>
-        <FaBars size={24} color="#FFFFFF" />
+        <FaBars size={24} color="/FFFFFF" />
       </BurgerMenu>
       <DesktopMenu>
         <NavLink
-          to="#top"
-          isActive={activeLink === "#top"}
-          onClick={() => handleLinkClick("#top")}
+          to="/top"
+          isActive={activeLink === "top"}
+          onClick={() => handleLinkClick("top")}
         >
           Top Games
         </NavLink>
         <NavLink
-          to="#new"
-          isActive={activeLink === "#new"}
-          onClick={() => handleLinkClick("#new")}
+          to="/new"
+          isActive={activeLink === "new"}
+          onClick={() => handleLinkClick("new")}
         >
           New Games
         </NavLink>
         <NavLink
-          to="#slots"
-          isActive={activeLink === "#slots"}
-          onClick={() => handleLinkClick("#slots")}
+          to="/slots"
+          isActive={activeLink === "slots"}
+          onClick={() => handleLinkClick("slots")}
         >
           Slots
         </NavLink>
         <NavLink
-          to="#jackpots"
-          isActive={activeLink === "#jackpots"}
-          onClick={() => handleLinkClick("#jackpots")}
+          to="/jackpots"
+          isActive={activeLink === "jackpots"}
+          onClick={() => handleLinkClick("jackpots")}
         >
           Jackpots
         </NavLink>
         <NavLink
-          to="#live"
-          isActive={activeLink === "#live"}
-          onClick={() => handleLinkClick("#live")}
+          to="/live"
+          isActive={activeLink === "live"}
+          onClick={() => handleLinkClick("live")}
         >
           Live
         </NavLink>
         <NavLink
-          to="#blackjack"
-          isActive={activeLink === "#blackjack"}
-          onClick={() => handleLinkClick("#blackjack")}
+          to="/blackjack"
+          isActive={activeLink === "blackjack"}
+          onClick={() => handleLinkClick("blackjack")}
         >
           Blackjack
         </NavLink>
         <NavLink
-          to="#roulette"
-          isActive={activeLink === "#roulette"}
-          onClick={() => handleLinkClick("#roulette")}
+          to="/roulette"
+          isActive={activeLink === "roulette"}
+          onClick={() => handleLinkClick("roulette")}
         >
           Roulette
         </NavLink>
         <NavLink
-          to="#table"
-          isActive={activeLink === "#table"}
-          onClick={() => handleLinkClick("#table")}
+          to="/table"
+          isActive={activeLink === "table"}
+          onClick={() => handleLinkClick("table")}
         >
           Table
         </NavLink>
         <NavLink
-          to="#poker"
-          isActive={activeLink === "#poker"}
-          onClick={() => handleLinkClick("#poker")}
+          to="/poker"
+          isActive={activeLink === "poker"}
+          onClick={() => handleLinkClick("poker")}
         >
           Poker
         </NavLink>
         <NavLink
-          to="#other"
-          isActive={activeLink === "#other"}
-          onClick={() => handleLinkClick("#other")}
+          to="/other"
+          isActive={activeLink === "other"}
+          onClick={() => handleLinkClick("other")}
         >
           Other
         </NavLink>
       </DesktopMenu>
       <DropdownMenu isOpen={isOpen}>
         <NavLink
-          to="#top"
-          isActive={activeLink === "#top"}
-          onClick={() => handleLinkClick("#top")}
+          to="/top"
+          isActive={activeLink === "top"}
+          onClick={() => handleLinkClick("top")}
         >
           Top Games
         </NavLink>
         <NavLink
-          to="#new"
-          isActive={activeLink === "#new"}
-          onClick={() => handleLinkClick("#new")}
+          to="/new"
+          isActive={activeLink === "new"}
+          onClick={() => handleLinkClick("new")}
         >
           New Games
         </NavLink>
         <NavLink
-          to="#slots"
-          isActive={activeLink === "#slots"}
-          onClick={() => handleLinkClick("#slots")}
+          to="/slots"
+          isActive={activeLink === "slots"}
+          onClick={() => handleLinkClick("slots")}
         >
           Slots
         </NavLink>
         <NavLink
-          to="#jackpots"
-          isActive={activeLink === "#jackpots"}
-          onClick={() => handleLinkClick("#jackpots")}
+          to="/jackpots"
+          isActive={activeLink === "jackpots"}
+          onClick={() => handleLinkClick("jackpots")}
         >
           Jackpots
         </NavLink>
         <NavLink
-          to="#live"
-          isActive={activeLink === "#live"}
-          onClick={() => handleLinkClick("#live")}
+          to="/live"
+          isActive={activeLink === "live"}
+          onClick={() => handleLinkClick("live")}
         >
           Live
         </NavLink>
         <NavLink
-          to="#blackjack"
-          isActive={activeLink === "#blackjack"}
-          onClick={() => handleLinkClick("#blackjack")}
+          to="/blackjack"
+          isActive={activeLink === "blackjack"}
+          onClick={() => handleLinkClick("blackjack")}
         >
           Blackjack
         </NavLink>
         <NavLink
-          to="#roulette"
-          isActive={activeLink === "#roulette"}
-          onClick={() => handleLinkClick("#roulette")}
+          to="/roulette"
+          isActive={activeLink === "roulette"}
+          onClick={() => handleLinkClick("roulette")}
         >
           Roulette
         </NavLink>
         <NavLink
-          to="#table"
-          isActive={activeLink === "#table"}
-          onClick={() => handleLinkClick("#table")}
+          to="/table"
+          isActive={activeLink === "table"}
+          onClick={() => handleLinkClick("table")}
         >
           Table
         </NavLink>
         <NavLink
-          to="#poker"
-          isActive={activeLink === "#poker"}
-          onClick={() => handleLinkClick("#poker")}
+          to="/poker"
+          isActive={activeLink === "poker"}
+          onClick={() => handleLinkClick("poker")}
         >
           Poker
         </NavLink>
         <NavLink
-          to="#other"
-          isActive={activeLink === "#other"}
-          onClick={() => handleLinkClick("#other")}
+          to="/other"
+          isActive={activeLink === "other"}
+          onClick={() => handleLinkClick("other")}
         >
           Other
         </NavLink>

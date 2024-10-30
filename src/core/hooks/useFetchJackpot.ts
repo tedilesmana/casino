@@ -5,6 +5,7 @@ export const useFetchJackpot = (interval: number = 10000) => {
   const [jackpots, setJackpots] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  
 
   useEffect(() => {
     const fetchData = async () => {

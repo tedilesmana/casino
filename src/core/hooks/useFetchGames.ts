@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { fetchGames } from "../services/apiService";
+import { GameCardProps } from "../../views/components/GameCard";
 
 export const useFetchGames = () => {
-  const [games, setGames] = useState<any[]>([]);
+  const [games, setGames] = useState<GameCardProps[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 

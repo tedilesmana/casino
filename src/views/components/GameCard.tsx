@@ -10,11 +10,17 @@ import {
 import { FaPlay } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-interface GameCardProps {
+export interface GameCardProps {
+  id?: string;
   name: string;
   image: string;
   jackpotAmount?: number;
   categories?: string[]; // Add categories prop
+}
+
+export interface GameJackpotProps {
+  game?: string;
+  amount: string;
 }
 
 const GameCard: React.FC<GameCardProps> = React.memo(
