@@ -17,7 +17,7 @@ export const GameProvider = ({ children }: any) => {
   const [loading, setLoading] = useState(true);
   const [jackpots, setJackpots] = useState([]);
   const [error, setError] = useState(null);
-  const [activeLink, setActiveLink] = useState<string>("/top");
+  const [activeLink, setActiveLink] = useState<string>("top");
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   useEffect(() => {

@@ -12,7 +12,7 @@ import TableGames from "../views/pages/TableGames";
 import PokerGames from "../views/pages/PokerGames";
 import OtherGames from "../views/pages/OtherGames";
 
-const AppRoutes: React.FC = () => {
+export const GameRoutes: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/top" />} />
@@ -29,5 +29,3 @@ const AppRoutes: React.FC = () => {
     </Routes>
   );
 };
-
-export default AppRoutes;

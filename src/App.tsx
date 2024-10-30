@@ -2,18 +2,18 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { BrowserRouter as Router } from "react-router-dom"; // Import React Router
-import AppRoutes from "./routes/Routes"; // Import AppRoutes
+import { GameRoutes } from "./routes/Routes"; // Import GameRoutes
 import { theme } from "./styles/theme";
 import { GameProvider } from "./redux/context/GameContext";
 
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
-      <GameProvider>
-        <Router>
-          <AppRoutes /> {/* Use the AppRoutes component */}
-        </Router>
-      </GameProvider>
+      <Router>
+        <GameProvider>
+          <GameRoutes /> {/* Use the GameRoutes component */}
+        </GameProvider>
+      </Router>
     </ThemeProvider>
   );
 };
